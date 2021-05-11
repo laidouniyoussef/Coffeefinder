@@ -2,7 +2,7 @@ const cafeteriaForm = document.getElementById('cafeteria-form');
 const cafeteriaId = document.getElementById('cafeteria-id');
 const cafeteriaAddress = document.getElementById('cafeteria-address');
 
-// Send POST to API to add store
+// Send POST to API to add cafeteria
 async function addCafeteria(e) {
     e.preventDefault();
   
