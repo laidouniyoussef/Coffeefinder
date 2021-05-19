@@ -39,6 +39,9 @@ StoreSchema.pre('save', async function( next){
     formattedAddress : loc[0].formattedAddress
     
   }
+
+  this.address=undefined;
+  next(); 
 });
 
 module.exports = mongoose.model('Store',StoreSchema);
