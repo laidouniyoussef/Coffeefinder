@@ -23,7 +23,7 @@ async function getCafeterias() {
         },
         properties: {
           cafeteriaId: cafeteria.cafeteriaId,
-          icon: 'shop' // À MODIFIER
+          icon: 'cafe'  //commercial
         }
       };
     });
