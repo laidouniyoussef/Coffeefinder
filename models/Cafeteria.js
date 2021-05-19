@@ -1,12 +1,12 @@
 const mongoose=require('mongoose');
 const geocoder=require('../utils/geocoder');
-const StoreSchema = new mongoose.Schema({
-    storeId:{
+const CafeteriaSchema = new mongoose.Schema({
+  cafeteriaId:{
         type:String,
-        required :[true,'Please add a store Id'],
+        required :[true,'Please add a Cafeteria Id'],
         unique : true,
         trim:true,
-        maxlength:[10, 'Store ID must be less than 10 chars']
+        maxlength:[10, 'Cafeteria ID must be less than 10 chars']
     },
     address:{
         type:String,
@@ -30,7 +30,7 @@ const StoreSchema = new mongoose.Schema({
 });
 
 //Geocoder create location
-StoreSchema.pre('save', async function( next){
+CafeteriaSchema.pre('save', async function( next){
   const loc = await geocoder.geocode(this.address);
   this.location = {
     type: 'Point',
@@ -44,4 +44,4 @@ StoreSchema.pre('save', async function( next){
   next(); 
 });
 
-module.exports = mongoose.model('Store',StoreSchema);
+module.exports = mongoose.model('Cafeteria',CafeteriaSchema);

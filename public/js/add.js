@@ -9,7 +9,6 @@ async function addCafeteria(e) {
     if (cafeteriaId.value === '' || cafeteriaAddress.value === '') {
       alert('Please fill in fields');
     }
-  
     const sendBody = {
       cafeteriaId: cafeteriaId.value,
       address: cafeteriaAddress.value
@@ -29,7 +28,7 @@ async function addCafeteria(e) {
       }
   
       alert('Cafeteria added!');
-      window.location.href = '/index.html';
+      window.location.href = '../public/index.html';
     } catch (err) {
       alert(err);
       return;

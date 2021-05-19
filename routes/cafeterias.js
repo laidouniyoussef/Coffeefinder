@@ -1,13 +1,13 @@
 const express  = require('express');
 
-const {getStores, addStore} = require('../controllers/stores');
+const {getCafeterias, addCafeteria} = require('../controllers/cafeterias');
 const router = express.Router();
 
 // router.get('/', (req, res) => {
 //     res.send('FREEEE PALESTINEE !!!!'); 
 // });
 
-router.route('/').get(getStores).post(addStore);
+router.route('/').get(getCafeterias).post(addCafeteria);
 
 
 module.exports = router ; 
