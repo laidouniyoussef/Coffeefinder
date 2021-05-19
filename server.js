@@ -2,21 +2,27 @@ const path=require('path');
 const express=require('express');
 const dotenv=require('dotenv');
 const cors=require('cors');
+const connectDB=require('./config/db')
 
 dotenv.config({path:'./config/config.env'});
 
+//connect to database
+connectDB();
 
 // Body parser
 const app = express();
 
 
+app.use(express.json());
+
 //Enable cors
 
-app.use(express.json());
-app.use(curs());
-app.get('/api/v1/stores');
+app.use(cors());
+
+//Routes
 
 
+app.use('/api/v1/stores',require('./routes/stores'));
 
 const PORT = process.env.PORT || 5000 ;
 app.listen(PORT, () => 
