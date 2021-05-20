@@ -28,7 +28,7 @@ async function addCafeteria(e) {
       }
   
       alert('Cafeteria added!');
-      window.location.href = '../public/index.html';
+      window.location.href = '../index.html';
     } catch (err) {
       alert(err);
       return;
