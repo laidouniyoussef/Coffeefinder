@@ -36,10 +36,8 @@ CafeteriaSchema.pre('save', async function( next){
     type: 'Point',
     coordinates:[
       loc[0].longitude, loc[0].latitude],
-    formattedAddress : loc[0].formattedAddress
-    
+    formattedAddress : loc[0].formattedAddress  
   }
-
   this.address=undefined;
   next(); 
 });
